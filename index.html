@@ -10,7 +10,9 @@
 
           success: function (data, textStatus, request) {
             console.log(request);
-            console.log(request.getResponseHeader("Origin"));
+            console.log(
+              request.getResponseHeader("Access-Control-Request-Headers")
+            );
             $(".greeting-id").append(data.id);
             $(".greeting-content").append(data.content);
           },
