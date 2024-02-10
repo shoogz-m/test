@@ -10,6 +10,7 @@
 
           success: function (data, textStatus, request) {
             console.log(request);
+            console.log(request.getAllResponseHeaders());
             console.log(
               request.getResponseHeader("Access-Control-Request-Headers")
             );
