@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $.ajax({
+          url: "http://localhost:8080/greeting",
+
+          success: function (data, textStatus, request) {
+            alert(request.getResponseHeader("Content-Type"));
+            $(".greeting-id").append(data.id);
+            $(".greeting-content").append(data.content);
+          },
+          error: function (request, textStatus, errorThrown) {
+            alert(request.getResponseHeader("Access-Control-Allow-Origin"));
+          },
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div>
+      <p class="greeting-id">The ID is &ensp;</p>
+      <p class="greeting-content">The content is &ensp;</p>
+    </div>
+  </body>
+</html>
