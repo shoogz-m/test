@@ -20,7 +20,7 @@
           error: function (request, textStatus, errorThrown) {
             alert(request);
             console.log(
-              request.getResponseHeader("Access-Control-Request-Headers")
+              request.getResponseHeader("Access-Control-Allow-Origin")
             );
           },
         });
