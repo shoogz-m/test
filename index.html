@@ -10,12 +10,14 @@
 
           success: function (data, textStatus, request) {
             console.log(request);
-            console.log(request.getResponseHeader("Content-Type"));
+            console.log(
+              request.getResponseHeader("Access-Control-Allow-Origin")
+            );
             $(".greeting-id").append(data.id);
             $(".greeting-content").append(data.content);
           },
           error: function (request, textStatus, errorThrown) {
-            alert(request.getResponseHeader("Access-Control-Allow-Origin"));
+            alert(errorThrown);
           },
         });
       });
