@@ -9,7 +9,8 @@
           url: "http://localhost:8080/greeting",
 
           success: function (data, textStatus, request) {
-            alert(request.getResponseHeader("Content-Type"));
+            console.log(request);
+            console.log(request.getResponseHeader("Content-Type"));
             $(".greeting-id").append(data.id);
             $(".greeting-content").append(data.content);
           },
