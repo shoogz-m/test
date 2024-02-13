@@ -9,17 +9,18 @@
           url: "http://localhost:8080/greeting",
 
           success: function (data, textStatus, request) {
-            console.log(request);
-            console.log(request.getAllResponseHeaders());
-            console.log(request.getResponseHeader("Host"));
+            console.log("request: " + request);
+            console.log(
+              "getAllResponseHeaders: " + request.getAllResponseHeaders()
+            );
+            console.log("host: " + request.getResponseHeader("Host"));
 
             $(".greeting-id").append(data.id);
             $(".greeting-content").append(data.content);
           },
           error: function (request, textStatus, errorThrown) {
-            alert(request);
-            console.log(request);
-            console.log(errorThrown);
+            alert("Error: " + errorThrown);
+            console.log("Error: " + errorThrown);
           },
         });
       });
