@@ -16,8 +16,8 @@
             $(".greeting-content").append(data.content);
           },
           error: function (request, textStatus, errorThrown) {
-            alert(errorThrown);
-            console.log(textStatus);
+            alert(textStatus);
+            console.log(errorThrown);
           },
         });
       });
